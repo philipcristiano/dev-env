@@ -27,7 +27,14 @@ in {
 
   kops_1_5_3 = generic {
     version = "1.5.3";
-    sha256 = "46ae58b0d490a6b1cd2fdc697f3f33c5c7b9a3f0c5ec7596784b93f0ee0cb629";
+
+    file = if stdenv.system == "x86_64-darwin" then "kops-darwin-amd64"
+      else if stdenv.system == "x86_64-linux" then "kops-linux-amd64"
+      else abort "Unsupported platform";
+
+    sha256 = if stdenv.system == "x86_64-darwin" then "46ae58b0d490a6b1cd2fdc697f3f33c5c7b9a3f0c5ec7596784b93f0ee0cb629"
+        else if stdenv.system == "x86_64-linux" then "7e3fcd62a968f29c7d1add28bbd9467b568d5d4a9c349330c7d67cfdf7cf1b52"
+        else abort "Unsupported platform";
   };
 
 }
