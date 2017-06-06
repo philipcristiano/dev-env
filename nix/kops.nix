@@ -37,4 +37,16 @@ in {
         else abort "Unsupported platform";
   };
 
+  kops_1_6_0 = generic {
+    version = "1.6.0";
+
+    file = if stdenv.system == "x86_64-darwin" then "kops-darwin-amd64"
+      else if stdenv.system == "x86_64-linux" then "kops-linux-amd64"
+      else abort "Unsupported platform";
+
+    sha256 = if stdenv.system == "x86_64-darwin" then "d220505a220eefc7aca39f218706a74cfc5e0649e6050f1b1e9847d1766832f4"
+        else if stdenv.system == "x86_64-linux" then "91058b40241e4b9f1c94a85936626dd69eea604f448ad3164d283d9bda94b29a"
+        else abort "Unsupported platform";
+  };
+
 }
