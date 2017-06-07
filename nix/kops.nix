@@ -15,7 +15,7 @@ let
 
       buildCommand = ''
         mkdir -p $out/bin
-        mv $src $out/bin/kops
+        cp $src $out/bin/kops
         echo Installed kops to $out/bin/kops
         '';
 
