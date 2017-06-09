@@ -13,9 +13,12 @@ let
       sha256 = "46f2a5c916375365f10ea1623af221292f219c342557f1a8a8ceb49c7da310ec";
   }) {};
 
+  # Get from github
+  ghpkgs = pkgs.callPackage (fetchTarball https://github.com/philipcristiano/dev-env/archive/v0.0.1.tar.gz) {};
+
 in stdenv.mkDerivation {
   name = "env";
-  buildInputs = [ devpkgs.terraform.terraform_0_9_4
-                  devpkgs.kops.kops_1_5_3
+  buildInputs = [ ghpkgs.terraform.terraform_0_9_4
+                  ghpkgs.kops.kops_1_5_3
                 ];
 }
