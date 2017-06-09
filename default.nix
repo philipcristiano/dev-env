@@ -6,8 +6,8 @@ let
   callPackage = pkgs.lib.callPackageWith (pkgs // pkgs.xlibs // self);
 
   self = {
-    kops = callPackage ./kops.nix { };
-    terraform = callPackage ./terraform.nix { };
+    kops = callPackage ./nix/kops.nix { };
+    terraform = callPackage ./nix/terraform.nix { };
 
   };
 in
