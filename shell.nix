@@ -5,6 +5,7 @@ let
   # Install from local file
   terraform = pkgs.callPackage nix/terraform.nix {};
   kops = pkgs.callPackage nix/kops.nix {};
+  devpkgs = pkgs.callPackage nix/default.nix {};
 
   # Install from github
   terraform_src = pkgs.callPackage (pkgs.fetchurl
@@ -14,8 +15,7 @@ let
 
 in stdenv.mkDerivation {
   name = "env";
-  # change terraform_0_9_4 to any of the varieties listed in the called packages
-  buildInputs = [ terraform_src.terraform_0_9_4
-                  kops.kops_1_5_3
+  buildInputs = [ devpkgs.terraform.terraform_0_9_4
+                  devpkgs.kops.kops_1_5_3
                 ];
 }
