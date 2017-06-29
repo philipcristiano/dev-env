@@ -57,7 +57,7 @@ in {
       else if stdenv.system == "x86_64-linux" then "kops-linux-amd64"
       else abort "Unsupported platform";
 
-    sha256 = if stdenv.system == "x86_64-darwin" then "41225a58595826b91723fb39e7bd9466d6bfc6aebdb80f71b22961887846a0cc"
+    sha256 = if stdenv.system == "x86_64-darwin" then "1k508rw8hq99n9qhzf5xmv3bzmk6jjyyffgv4cbvj9jqb5c5l8j1"
         else if stdenv.system == "x86_64-linux" then "4bdc61685a2a359318830d8e4cd230ff90a8f74d43398ea9b631d9ab252f98b5"
         else abort "Unsupported platform";
   };
