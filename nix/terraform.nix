@@ -57,4 +57,10 @@ in {
     '';
     doCheck   = true;
   };
+
+  terraform_0_9_10 = generic {
+    version = "0.9.10";
+    sha256 = "0sg8czfn4hh7cf7zcdqwkygsvm9p47f5bi6kbl37bx9rn6bi5m6s";
+    doCheck = true;
+  };
 }
