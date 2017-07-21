@@ -2,14 +2,14 @@
 
 let
 
-  generic = {version, sha256, ...}@attrs:
+  generic = {file, version, sha256, ...}@attrs:
 
     stdenv.mkDerivation {
       name = "kops-${version}";
       version = version;
 
       src = pkgs.fetchurl {
-        url = "https://github.com/kubernetes/kops/releases/download/${version}/kops-darwin-amd64";
+        url = "https://github.com/kubernetes/kops/releases/download/${version}/${file}";
         sha256 = sha256;
       };
 
