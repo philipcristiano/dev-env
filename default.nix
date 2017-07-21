@@ -7,8 +7,8 @@ let
 
   self = {
     kops = callPackage ./nix/kops.nix { };
+    kubectl = callPackage ./nix/kubectl.nix { };
     terraform = callPackage ./nix/terraform.nix { };
-
   };
 in
 self
