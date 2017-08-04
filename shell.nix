@@ -9,7 +9,7 @@ let
 
 in stdenv.mkDerivation {
   name = "env";
-  buildInputs = [ ghpkgs.terraform.terraform_0_9_4
+  buildInputs = [ ghpkgs.terraform.terraform_0_10_0
                   ghpkgs.kops.kops_1_6_2
                   ghpkgs.kubectl.kubectl_1_6_6
                 ];
