@@ -10,6 +10,7 @@ let
     kubectl = callPackage ./nix/kubectl.nix { };
     op = callPackage ./nix/op.nix { };
     terraform = callPackage ./nix/terraform.nix { };
+    cfssl = callPackage ./nix/terraform.nix { } ;
   };
 in
 self
